@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container{
+  max-width: 1280px;
+  width: 100%;
+  margin-inline: 24px;
+}
+
+#head__item1{
+  background-color: black;
+  color: white;
+  height: 18px;
+  width: 20px;
+  padding-left: 14px;
+  padding-right: 2px;
+  padding-top: 6px;
+  padding-bottom: 14px;
+  margin: auto;
+  display: inline-block;
+}
+
+.head__item3__img{
+  height: 20px;
+}
+
+#head__item3{
+  padding-left: 350px;
+}
+
+#head__list{
+  margin-bottom: 40px;
+}
+
+#info__item1__img{
+  height: 300px;
+  margin-bottom: 65px;
+}
+
+#info__item2{
+  padding-bottom: 115px;
+  text-align: left; /* Đảm bảo văn bản căn trái */
+}
+
+#info__item2 small{
+  display: block;
+  padding-right: 200px;
+  padding-bottom: 40px;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+#info__item2 div{
+  font-size: 27px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#info__item2{
+  padding-left: 30px;
+}
+
+#download__button{
+  padding: 10px;
+  margin-block: 50px;
+  margin-left: 290px;
+}
+#skills{
+  width: 100%;
+}
+
+#core__skills, #other__skills {
+  width: 50%;
+}
+
+#skills th, td{
+  padding: 0px;
+  text-align: left;
+}
+
+#skills span{
+  padding-inline: 5px;
+}
