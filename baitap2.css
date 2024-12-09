@@ -79,10 +79,6 @@
   
 }
 
-#download__button:hover{
-  background-color: #cf777f;
-  color: white;
-}
 #skills{
   width: 100%;
 }
@@ -104,4 +100,9 @@
   background-color: white;
   border-radius: 45px;
   font-size: 14px;
+}
+
+#download__button:hover{
+  background-color: #cf777f;
+  color: white;
 }
