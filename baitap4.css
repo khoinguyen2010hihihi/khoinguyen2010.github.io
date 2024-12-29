@@ -1,0 +1,254 @@
+body{
+  margin: 40px auto;
+  max-width: 75%;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #444;
+  padding: 0 10px;
+  font-family: Arial, sans-serif;
+}
+
+#section1{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+
+  .container1{
+    position: relative;
+    overflow: hidden;
+    width: 110%;
+    max-width: 480px;
+
+    .Honey__img{
+      display: block;
+      width: 480px;
+      height: 360px;
+      transition: all ease 0.3s;
+    }
+
+    .dreamhoney{
+      position: absolute;
+      bottom: 30px;
+      left: 20px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      transition: all ease 0.3s;
+      
+      span{
+        opacity: 0;
+        transition: opacity ease 0.3s;
+      }
+    }
+
+    .underline{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      height: 1px;
+      transition: all ease 0.3s;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(128, 0, 128, 0.4);
+      opacity: 0;
+      transition: opacity ease 0.3s;
+      z-index: 1000;
+    }
+
+    &:hover{
+      .dreamhoney{
+        transform: translateY(20px);
+      }
+    }
+
+    &:hover{
+      .underline{
+        height: 10px;
+      }
+
+      span{
+        opacity: 1;
+      }
+
+      &::before {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+#section2{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+  .container2{
+    position: relative;
+    overflow: hidden;
+    width: 110%;
+    max-width: 480px;
+
+    .sarah__img{
+      display: block;
+      width: 480px;
+      height: 360px;
+      transition: all ease 0.3s;
+      overflow: hidden;
+      position: relative;
+      object-fit: cover;
+      transform: scale(1.1);
+    }
+
+    .sarah{
+      position: absolute;
+      z-index: 999;
+      top: 30px;
+      left: 20px;
+      color: white;
+      transition: all ease 0.3s;
+    }
+
+    .sarah-2{
+      position: absolute;
+      z-index: 999;
+      top: 100px;
+      right: -250px;
+      font-size: 13px;
+      opacity: 0;
+      color: white;
+      transition: all ease 0.3s;
+      overflow: hidden;
+    }
+
+    #sarah__line{
+      transition: all ease 0.3s;
+      height: 2px;
+      width: 0%;
+      position: absolute;
+      left: 10%;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(136, 205, 173, 0.4);
+      opacity: 0;
+      transition: opacity ease 0.3s;
+      z-index: 1000;
+    }
+
+    &:hover{
+      #sarah__line{
+        height: 2px;
+        width: 400px;
+        background-color: white;
+      }
+
+      .sarah-2{
+        transform: translateX(-320px);
+        opacity: 1;
+      }
+
+      &::before{
+        opacity: 0.4;
+      }
+
+      .sarah__img{
+        transform: scale(1.1) translateX(-20px);
+      }
+    }
+  }
+}
+
+#section3{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+
+  .container3{
+    position: relative;
+    max-width: 480px;
+    overflow: hidden;
+
+    .string{
+      position: relative;
+      width: 100%;
+      
+      .chico{
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        text-align: center;
+        padding-top: 70px;
+        padding-bottom: 180px;
+        padding-right: 20px;
+        color: white;
+        border: solid 0px white;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+
+      .chico-2{
+        display: flex;
+        position: absolute;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        text-align: center;
+        padding-top: 140px;
+        font-size: 23px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+
+        .container3:hover &{
+          font-size: 20px;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .container3::before{
+          content: '';
+
+        }
+      }
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(131, 176, 193, 0.4);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease; 
+    }
+
+
+    &:hover::before{
+      opacity: 1;
+    }
+
+    &:hover .chico{
+      border-color: white;
+      transform: scale(0.95);
+      border-width: 1px;
+    }
+  }
+}
