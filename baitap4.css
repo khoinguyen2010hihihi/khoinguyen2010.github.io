@@ -180,6 +180,7 @@ body{
   .container3{
     position: relative;
     max-width: 480px;
+    max-height: 360px;
     overflow: hidden;
 
     .string{
@@ -187,18 +188,17 @@ body{
       width: 100%;
       
       .chico{
-        width: 100%;
+        width: calc(100% - 20px);
+        left: 10px;
         position: absolute;
-        left: 0px;
         text-align: center;
         padding-top: 70px;
-        padding-bottom: 180px;
-        padding-right: 20px;
+        padding-bottom: 200px;
         color: white;
         border: solid 0px white;
         box-sizing: border-box;
         transition: all 0.3s ease;
-        z-index: 2;
+        z-index: 999;
       }
 
       .chico-2{
@@ -247,8 +247,122 @@ body{
 
     &:hover .chico{
       border-color: white;
-      transform: scale(0.95);
-      border-width: 1px;
+      border-width: 2px;
+      transform: scale(1);
+    }
+
+    .chico__img{
+      transform: scale(1.15);
+      transition: all ease 0.3s;
+    }
+
+    &:hover .chico__img{
+      transform: scale(1.0);
+    }
+  }
+
+  .container3:hover .chico {
+    border-width: 1px;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+  }
+}
+
+#section4{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+  .container4{
+    position: relative;
+    max-width: 480px;
+    max-height: 360px;
+    overflow: hidden;
+    object-fit: cover;
+    .string{
+      position: absolute;
+      left: 30px;
+      top: 30px;
+      z-index: 999;
+      h2{
+        color: white;
+      }
+      p{
+        background-color: white;
+        display: inline-block;
+        padding-inline: 10px;
+        transform: translateX(-330px);
+        transition: all ease 0.3s;
+
+        &:nth-child(2){
+          transition-delay: 0.1s;
+        }
+
+        &:nth-child(3){
+          transition-delay: 0.2s;
+        }
+
+        &:nth-child(4){
+          transition-delay: 0.3s;
+        }
+      }
+      &:hover p{
+        transform: translateX(0px);
+      }
+    }
+
+    .julia__img{
+      transition: all ease 0.3s;
+    }
+
+    &:hover .julia__img{
+      transform: scale(1.1);
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(47, 50, 56, 0.4);
+      opacity: 0;
+      transition: all ease 0.3s;
+      z-index: 1000;
+    }
+
+    &:hover{
+      &::before{
+        opacity: 1;
+      }
     }
   }
 }
+
+/* #section5{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+  .container5{
+    position: relative;
+    max-width: 480px;
+    max-height: 360px;
+    overflow: hidden;
+    object-fit: cover;
+    .string{
+      position: absolute;
+      left: 30px;
+      bottom: 30px;
+      z-index: 999;
+      .golia{
+        padding-bottom: 0px;
+      }
+      .golia-2{
+        
+        opacity: 1;
+      }
+    }
+
+    
+  } */
+/* } */
