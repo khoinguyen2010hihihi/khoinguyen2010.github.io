@@ -339,7 +339,7 @@ body{
   }
 }
 
-/* #section5{
+#section5{
   display: flex;
   gap: 200px;
   margin-bottom: 100px;
@@ -349,20 +349,122 @@ body{
     max-height: 360px;
     overflow: hidden;
     object-fit: cover;
-    .string{
+
+    .golia{
       position: absolute;
-      left: 30px;
-      bottom: 30px;
+      bottom: 0;
       z-index: 999;
+      color: white;
+      padding-inline: 20px;
+      transition: all ease 0.3s;
+    }
+
+    .golia-2{
+      position: absolute;
+      padding-inline: 20px;
+      bottom: -40px;
+      color: white;
+      transition: all ease 0.3s;
+      z-index: 999;
+    }
+
+    .line{
+      position: absolute;
+      width: 100%;
+      height: 0px;
+      bottom: 0;
+      z-index: 998;
+      background-color: #DF4E4E;
+      transition: all ease 0.3s;
+    }
+
+    .golia__img{
+      position: relative;
+      transition: all ease 0.3s;
+    }
+
+    &:hover{
       .golia{
-        padding-bottom: 0px;
+        padding-bottom: 120px;
       }
       .golia-2{
-        
-        opacity: 1;
+        padding-bottom: 50px;
+      }
+
+      .line{
+        height: 85px;
+      }
+
+      .golia__img{
+        transform: translateY(-85px);
       }
     }
 
-    
-  } */
-/* } */
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(223, 78, 78, 0.2);
+      opacity: 1;
+      z-index: 1000;
+    }
+  }
+}
+
+#section6{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+  .container6{
+    position: relative;
+    max-width: 480px;
+    max-height: 360px;
+   
+    .lonely{
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      translate: -50% -50%;
+      background-color: white;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .lonely-2{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      background-color: white;
+      width: 70%;
+      height: 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all ease 0.3s;
+      z-index: 999;
+    }
+
+    .lonely__img{
+      position: relative;
+      transition: all ease 0.3s;
+    }
+    &:hover{
+      .lonely-2{
+        opacity: 1;
+        width: 80%;
+        height: 8%;
+      }
+
+      .lonely__img{
+        transform: scale(1.1);
+      }
+    }
+  }
+}
