@@ -1,0 +1,470 @@
+body{
+  margin: 40px auto;
+  max-width: 75%;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #444;
+  padding: 0 10px;
+  font-family: Arial, sans-serif;
+}
+
+#section1{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+
+  .container1{
+    position: relative;
+    overflow: hidden;
+    width: 110%;
+    max-width: 480px;
+
+    .Honey__img{
+      display: block;
+      width: 480px;
+      height: 360px;
+      transition: all ease 0.3s;
+    }
+
+    .dreamhoney{
+      position: absolute;
+      bottom: 30px;
+      left: 20px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      transition: all ease 0.3s;
+      
+      span{
+        opacity: 0;
+        transition: opacity ease 0.3s;
+      }
+    }
+
+    .underline{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      height: 1px;
+      transition: all ease 0.3s;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(128, 0, 128, 0.4);
+      opacity: 0;
+      transition: opacity ease 0.3s;
+      z-index: 1000;
+    }
+
+    &:hover{
+      .dreamhoney{
+        transform: translateY(20px);
+      }
+    }
+
+    &:hover{
+      .underline{
+        height: 10px;
+      }
+
+      span{
+        opacity: 1;
+      }
+
+      &::before {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+#section2{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+  .container2{
+    position: relative;
+    overflow: hidden;
+    width: 110%;
+    max-width: 480px;
+
+    .sarah__img{
+      display: block;
+      width: 480px;
+      height: 360px;
+      transition: all ease 0.3s;
+      overflow: hidden;
+      position: relative;
+      object-fit: cover;
+      transform: scale(1.1);
+    }
+
+    .sarah{
+      position: absolute;
+      z-index: 999;
+      top: 30px;
+      left: 20px;
+      color: white;
+      transition: all ease 0.3s;
+    }
+
+    .sarah-2{
+      position: absolute;
+      z-index: 999;
+      top: 100px;
+      right: -250px;
+      font-size: 13px;
+      opacity: 0;
+      color: white;
+      transition: all ease 0.3s;
+      overflow: hidden;
+    }
+
+    #sarah__line{
+      transition: all ease 0.3s;
+      height: 2px;
+      width: 0%;
+      position: absolute;
+      left: 10%;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(136, 205, 173, 0.4);
+      opacity: 0;
+      transition: opacity ease 0.3s;
+      z-index: 1000;
+    }
+
+    &:hover{
+      #sarah__line{
+        height: 2px;
+        width: 400px;
+        background-color: white;
+      }
+
+      .sarah-2{
+        transform: translateX(-320px);
+        opacity: 1;
+      }
+
+      &::before{
+        opacity: 0.4;
+      }
+
+      .sarah__img{
+        transform: scale(1.1) translateX(-20px);
+      }
+    }
+  }
+}
+
+#section3{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+
+  .container3{
+    position: relative;
+    max-width: 480px;
+    max-height: 360px;
+    overflow: hidden;
+
+    .string{
+      position: relative;
+      width: 100%;
+      
+      .chico{
+        width: calc(100% - 20px);
+        left: 10px;
+        position: absolute;
+        text-align: center;
+        padding-top: 70px;
+        padding-bottom: 200px;
+        color: white;
+        border: solid 0px white;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+
+      .chico-2{
+        display: flex;
+        position: absolute;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        text-align: center;
+        padding-top: 140px;
+        font-size: 23px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+
+        .container3:hover &{
+          font-size: 20px;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .container3::before{
+          content: '';
+
+        }
+      }
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(131, 176, 193, 0.4);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease; 
+    }
+
+
+    &:hover::before{
+      opacity: 1;
+    }
+
+    &:hover .chico{
+      border-color: white;
+      border-width: 2px;
+      transform: scale(1);
+    }
+
+    .chico__img{
+      transform: scale(1.15);
+      transition: all ease 0.3s;
+    }
+
+    &:hover .chico__img{
+      transform: scale(1.0);
+    }
+  }
+
+  .container3:hover .chico {
+    border-width: 1px;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+  }
+}
+
+#section4{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+  .container4{
+    position: relative;
+    max-width: 480px;
+    max-height: 360px;
+    overflow: hidden;
+    object-fit: cover;
+    .string{
+      position: absolute;
+      left: 30px;
+      top: 30px;
+      z-index: 999;
+      h2{
+        color: white;
+      }
+      p{
+        background-color: white;
+        display: inline-block;
+        padding-inline: 10px;
+        transform: translateX(-330px);
+        transition: all ease 0.3s;
+
+        &:nth-child(2){
+          transition-delay: 0.1s;
+        }
+
+        &:nth-child(3){
+          transition-delay: 0.2s;
+        }
+
+        &:nth-child(4){
+          transition-delay: 0.3s;
+        }
+      }
+      &:hover p{
+        transform: translateX(0px);
+      }
+    }
+
+    .julia__img{
+      transition: all ease 0.3s;
+    }
+
+    &:hover .julia__img{
+      transform: scale(1.1);
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(47, 50, 56, 0.4);
+      opacity: 0;
+      transition: all ease 0.3s;
+      z-index: 1000;
+    }
+
+    &:hover{
+      &::before{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#section5{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+  .container5{
+    position: relative;
+    max-width: 480px;
+    max-height: 360px;
+    overflow: hidden;
+    object-fit: cover;
+
+    .golia{
+      position: absolute;
+      bottom: 0;
+      z-index: 999;
+      color: white;
+      padding-inline: 20px;
+      transition: all ease 0.3s;
+    }
+
+    .golia-2{
+      position: absolute;
+      padding-inline: 20px;
+      bottom: -40px;
+      color: white;
+      transition: all ease 0.3s;
+      z-index: 999;
+    }
+
+    .line{
+      position: absolute;
+      width: 100%;
+      height: 0px;
+      bottom: 0;
+      z-index: 998;
+      background-color: #DF4E4E;
+      transition: all ease 0.3s;
+    }
+
+    .golia__img{
+      position: relative;
+      transition: all ease 0.3s;
+    }
+
+    &:hover{
+      .golia{
+        padding-bottom: 120px;
+      }
+      .golia-2{
+        padding-bottom: 50px;
+      }
+
+      .line{
+        height: 85px;
+      }
+
+      .golia__img{
+        transform: translateY(-85px);
+      }
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(223, 78, 78, 0.2);
+      opacity: 1;
+      z-index: 1000;
+    }
+  }
+}
+
+#section6{
+  display: flex;
+  gap: 200px;
+  margin-bottom: 100px;
+  .container6{
+    position: relative;
+    max-width: 480px;
+    max-height: 360px;
+   
+    .lonely{
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      translate: -50% -50%;
+      background-color: white;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .lonely-2{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      background-color: white;
+      width: 70%;
+      height: 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all ease 0.3s;
+      z-index: 999;
+    }
+
+    .lonely__img{
+      position: relative;
+      transition: all ease 0.3s;
+    }
+    &:hover{
+      .lonely-2{
+        opacity: 1;
+        width: 80%;
+        height: 8%;
+      }
+
+      .lonely__img{
+        transform: scale(1.1);
+      }
+    }
+  }
+}
