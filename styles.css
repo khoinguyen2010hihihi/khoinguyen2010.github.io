@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf6e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+input, button {
+  height: 40px;
+  width: 160px;
+  margin: 20px;
+}
+
+#box {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
