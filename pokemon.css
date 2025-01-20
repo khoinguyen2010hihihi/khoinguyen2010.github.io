@@ -103,3 +103,46 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+#load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  height: 100px;
+}
+
+.load-more-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  height: 40px;
+}
+
+.load-more-btn:hover {
+  background-color: #0056b3;
+}
+.pokemon-types {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.pokemon-types {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.pokemon-type {
+  color: #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  text-transform: capitalize;
+}

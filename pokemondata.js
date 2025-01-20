@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.querySelector(".search");
   const wrapper = document.querySelector(".wrapper");
+  const loadMoreBtn = document.querySelector("#load-more-btn");
 
   const data = {
     "count": 1302,
-    "next": "https://pokeapi.co/api/v2/pokemon/?offset=898&limit=404",
+    "next": "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898",
     "previous": null,
     "results": [
       {
@@ -3601,44 +3602,93 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     ]
   };
+  
+  let currentPage = 0;
+  const pokemonPerPage = 32;
 
+  const typeColors = {
+    fire: "#f44336",
+    water: "#2196f3",
+    grass: "#4caf50",
+    electric: "#ffeb3b",
+    psychic: "#9c27b0",
+    ice: "#00bcd4",
+    dragon: "#e91e63",
+    ghost: "#673ab7",
+    dark: "#212121",
+    fairy: "#f48fb1",
+    poison: "#9c27b0",
+    ground: "#8d6e63",
+    normal: "#9e9e9e",
+    flying: "#81d4fa",
+    bug: "#8bc34a",
+    rock: "#795548",
+    steel: "#607d8b",
+    fighting: "#e57373",
+  };
   function loadPokemonData(pokemon) {
     fetch(pokemon.url)
-    .then((response) => response.json())
-    .then((data) => {
-      const pokemonCard = document.createElement("div");
-      pokemonCard.classList.add("pokemon-card");
+      .then((response) => response.json())
+      .then((data) => {
+        const pokemonCard = document.createElement("div");
+        pokemonCard.classList.add("pokemon-card");
 
-      const pokemonImage = document.createElement("img");
-      pokemonImage.src = data.sprites.front_default;
-      pokemonImage.alt = data.name;
+        const pokemonImage = document.createElement("img");
+        pokemonImage.src = data.sprites.front_default;
+        pokemonImage.alt = data.name;
 
-      const pokemonName = document.createElement("p");
-      pokemonName.textContent = data.name;
+        const pokemonName = document.createElement("p");
+        pokemonName.textContent = data.name;
 
-      pokemonCard.appendChild(pokemonImage);
-      pokemonCard.appendChild(pokemonName);
+        const pokemonTypesContainer = document.createElement("div");
+        pokemonTypesContainer.classList.add("pokemon-types");
 
-      wrapper.appendChild(pokemonCard);
-      }
-    )
-    .catch((error) => console.log(error));
+        data.types.forEach((type) => {
+          const pokemonType = document.createElement("div");
+          pokemonType.classList.add("pokemon-type");
+          pokemonType.textContent = type.type.name;
+          pokemonType.style.backgroundColor = typeColors[type.type.name];
+          pokemonTypesContainer.appendChild(pokemonType);
+        });
+
+        pokemonCard.appendChild(pokemonImage);
+        pokemonCard.appendChild(pokemonName);
+        pokemonCard.appendChild(pokemonTypesContainer);
+
+        wrapper.appendChild(pokemonCard);
+      })
+      .catch((error) => console.log(error));
   }
 
-  function renderPokemons(pokemons) {
-    wrapper.innerHTML = "";
-    pokemons.forEach((pokemon) => {
+  function renderPokemons(startIndex, endIndex) {
+    const pokemonsToRender = data.results.slice(startIndex, endIndex);
+    pokemonsToRender.forEach((pokemon) => {
       loadPokemonData(pokemon);
     });
   }
 
-  searchInput.addEventListener("input", function() {
-    
+  searchInput.addEventListener("input", function () {
     const searchEle = searchInput.value.toLowerCase();
-    const filteredPokemons = data.results.filter((pokemon) => 
-      pokemon.name.toLowerCase().includes(searchEle));
-    renderPokemons(filteredPokemons);
+    const filteredPokemons = data.results.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(searchEle)
+    );
+    wrapper.innerHTML = "";
+    renderPokemons(0, Math.min(filteredPokemons.length, pokemonPerPage));
   });
 
-  renderPokemons(data.results);
+  function loadMorePokemons() {
+    currentPage++;
+    const startIndex = currentPage * pokemonPerPage;
+    const endIndex = Math.min(startIndex + pokemonPerPage, data.results.length);
+
+    renderPokemons(startIndex, endIndex);
+
+    if (endIndex >= data.results.length) {
+      loadMoreBtn.style.display = "none";
+    }
+  }
+
+  loadMoreBtn.addEventListener("click", loadMorePokemons);
+
+  renderPokemons(0, pokemonPerPage);
 });
