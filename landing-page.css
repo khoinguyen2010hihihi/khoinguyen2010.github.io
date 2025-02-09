@@ -561,7 +561,7 @@ body{
             .language-switcher__item {
               display: flex;
               align-items: center;
-              border-bottom: .1rem solid rgba(0, 0, 0, .03);
+              border-bottom: 1px solid rgba(0, 0, 0, .03);
               background-color: transparent;
               transition: background-color .3s;
               color: #222;
@@ -1860,7 +1860,7 @@ body{
 
           @media (min-width: 840px) {
             .footer-trophies__background-pattern {
-              background-image: url(./horizontal-flash.jpg);
+              background-image: url(Barca__IMG/horizontal-flash.jpg);
               background-size: 328px 88px;
             }
 
@@ -1891,7 +1891,7 @@ body{
 
           @media (max-width: 840px) {
             .footer-trophies__background-pattern {
-              background-image: url(./cup__small.jpg);
+              background-image: url(Barca__IMG/cup__small.jpg);
               background-size: 196px 166px;
             }
 
@@ -2015,7 +2015,7 @@ body{
     padding: 40px 0;
     position: relative;
     background-position: 50%;
-    background-image: url(./fcb-centenary-footer-image@x2.png);
+    background-image: url(Barca__IMG/fcb-centenary-footer-image@x2.png);
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
